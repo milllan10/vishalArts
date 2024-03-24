@@ -3,378 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art Vishu🎨</title>
+    <title>Art Vishu</title>
     <link rel="icon" type="image/png" href="https://cdn.iconscout.com/icon/premium/png-512-thumb/peacock-10176044-8246853.png?f=webp&w=256">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <style>
-        *{
-            color: #142d4c;
-        }
-        /* For WebKit browsers (e.g., Chrome, Safari) */
-        ::-webkit-scrollbar {
-            width: 4px; /* Width of the scrollbar */
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1; /* Background color of the scrollbar track */
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #888; /* Color of the scrollbar thumb */
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555; /* Color of the scrollbar thumb on hover */
-        }
-
-        #mobile-menu {
-            position: fixed;
-            right: -200px; /* Initially hidden off-screen */
-            width: 120px;
-            height: calc(100% - 1rem); /* Adjust based on your header's height */
-            background-color: white; /* Adjust as needed */
-            transition: right 0.5s ease-in-out; /* Smooth transition */
-            z-index: 1000; /* Ensure sidebar appears above other content */
-        }
-        .menu-container {
-            height: 1rem; /* Adjust the height as needed */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .close-btn {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            cursor: pointer;
-            color: #596e79; /* Adjust font color as needed */
-            display: none;
-        }
-        @media (min-width: 768px) {
-            #mobile-menu {
-                display: none; /* Hide mobile menu on larger screens */
-            }
-            .menu-container {
-                display: flex;
-            }
-            .close-btn {
-                display: none; /* Initially hide close button on larger screens */
-            }
-            .nav-links {
-                display: flex;
-                gap: 20px;
-            }
-            .nav-links a {
-                color: #596e79; /* Adjust font color as needed */
-            }
-        }
-        nav {
-            position: sticky;
-            top: 0;
-            background-color: #FFF;
-            z-index: 999;
-        }
-        .swiper {
-            width: 100%;
-            height: 100%;
-        }
-
-        .swiper-slide {
-            text-align: center;
-            font-size: 18px;
-            background: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .swiper-slide img {
-            margin: 0 15px;
-            border-radius: 8px;
-            display: block;
-            width: 100%;
-            height: 75vh;
-            object-fit: cover;
-        }
-
-        .swiper {
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .mouse span {
-            animation: colorText 8s ease-out infinite,nudgeText 8s ease-out infinite;
-            bottom: -20px;
-            color: #fff;
-            font-size: 13px;
-            font-weight: 500;
-            left: -20px;
-            letter-spacing: .5em;
-            line-height: 16px;
-            position: absolute;
-            text-align: center
-        }
-
-        .mouse {
-            animation: colorSlide 8s linear infinite,nudgeMouse 8s ease-out infinite;
-            background: white linear-gradient(transparent,transparent 50%,#303030 0,#303030);
-            background-size: 100% 200%;
-            border-radius: 100px;
-            bottom: 60px;
-            height: 40px;
-            left: 50%;
-            position: absolute;
-            width: 25px;
-            top: 80vh;
-        }
-
-        .mouse:after,.mouse:before {
-            bottom: 0;
-            content: "";
-            left: 0;
-            margin: auto;
-            position: absolute;
-            right: 0;
-            top: 0
-        }
-
-        .mouse:before {
-            background-color: white;
-            border-radius: 100px;
-            height: 38px;
-            width: 23px
-        }
-
-        .mouse:after {
-            animation: trackBallSlide 8s linear infinite;
-            background-color: #303030;
-            border-radius: 100%;
-            bottom: 14px;
-            height: 5px;
-            top: auto;
-            width: 5px
-        }
-
-        @keyframes colorSlide {
-            0% {
-                background-position: 0 100%
-            }
-
-            20% {
-                background-position: 0 0
-            }
-
-            21% {
-                background-color: white
-            }
-
-            29.99% {
-                background-color: #303030;
-                background-position: 0 0
-            }
-
-            30% {
-                background-color: white;
-                background-position: 0 100%
-            }
-
-            50% {
-                background-position: 0 0
-            }
-
-            51% {
-                background-color: white
-            }
-
-            59% {
-                background-color: #303030;
-                background-position: 0 0
-            }
-
-            60% {
-                background-color: white;
-                background-position: 0 100%
-            }
-
-            80% {
-                background-position: 0 0
-            }
-
-            81% {
-                background-color: white
-            }
-
-            90%,to {
-                background-color: #303030
-            }
-        }
-
-        @keyframes trackBallSlide {
-            0% {
-                opacity: 1;
-                transform: scale(1) translateY(-20px)
-            }
-
-            6% {
-                opacity: 1;
-                transform: scale(.9) translateY(5px)
-            }
-
-            14% {
-                opacity: 0;
-                transform: scale(.4) translateY(40px)
-            }
-
-            15%,19% {
-                opacity: 0;
-                transform: scale(.4) translateY(-20px)
-            }
-
-            28%,29.99% {
-                opacity: 1;
-                transform: scale(1) translateY(-20px)
-            }
-
-            30% {
-                opacity: 1;
-                transform: scale(1) translateY(-20px)
-            }
-
-            36% {
-                opacity: 1;
-                transform: scale(.9) translateY(5px)
-            }
-
-            44% {
-                opacity: 0;
-                transform: scale(.4) translateY(40px)
-            }
-
-            45%,49% {
-                opacity: 0;
-                transform: scale(.4) translateY(-20px)
-            }
-
-            58%,59.99% {
-                opacity: 1;
-                transform: scale(1) translateY(-20px)
-            }
-
-            60% {
-                opacity: 1;
-                transform: scale(1) translateY(-20px)
-            }
-
-            66% {
-                opacity: 1;
-                transform: scale(.9) translateY(5px)
-            }
-
-            74% {
-                opacity: 0;
-                transform: scale(.4) translateY(40px)
-            }
-
-            75%,79% {
-                opacity: 0;
-                transform: scale(.4) translateY(-20px)
-            }
-
-            88%,to {
-                opacity: 1;
-                transform: scale(1) translateY(-20px)
-            }
-        }
-
-        @keyframes nudgeMouse {
-            0% {
-                transform: translateY(0)
-            }
-
-            20% {
-                transform: translateY(8px)
-            }
-
-            30% {
-                transform: translateY(0)
-            }
-
-            50% {
-                transform: translateY(8px)
-            }
-
-            60% {
-                transform: translateY(0)
-            }
-
-            80% {
-                transform: translateY(8px)
-            }
-
-            90% {
-                transform: translateY(0)
-            }
-        }
-
-        @keyframes nudgeText {
-            0% {
-                transform: translateY(0)
-            }
-
-            20% {
-                transform: translateY(2px)
-            }
-
-            30% {
-                transform: translateY(0)
-            }
-
-            50% {
-                transform: translateY(2px)
-            }
-
-            60% {
-                transform: translateY(0)
-            }
-
-            80% {
-                transform: translateY(2px)
-            }
-
-            90% {
-                transform: translateY(0)
-            }
-        }
-
-        @keyframes colorText {
-            21% {
-                color: white
-            }
-
-            30% {
-                color: #303030
-            }
-
-            51% {
-                color: white
-            }
-
-            60% {
-                color: #303030
-            }
-
-            81% {
-                color: white
-            }
-
-            90% {
-                color: #303030
-            }
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wdth,wght@0,6..12,75..125,200..1000;1,6..12,75..125,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="">
 
@@ -387,10 +26,11 @@
 
         <!-- Navigation Links -->
         <div class="hidden md:flex nav-links">
-            <a href="#" class="text-white hover:text-gray-300">Home</a>
-            <a href="#" class="text-white hover:text-gray-300">About</a>
-            <a href="#" class="text-white hover:text-gray-300">Services</a>
-            <a href="#" class="text-white hover:text-gray-300">Contact</a>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-snapchat"></i>
+            <i class="fa-brands fa-facebook"></i>
         </div>
 
         <!-- Mobile Menu Toggle Button -->
@@ -422,60 +62,64 @@
     </div>
 </div>
 
-<!-- Curosal -->
-<div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="https://mdbootstrap.com/img/Photos/Slides/img%20(35).webp" alt="images"></div>
-        <div class="swiper-slide"><img src="https://mdbootstrap.com/img/Photos/Slides/img%20(35).webp" alt="images"></div>
-        <div class="swiper-slide"><img src="https://mdbootstrap.com/img/Photos/Slides/img%20(35).webp" alt="images"></div>
-        <div class="swiper-slide"><img src="https://mdbootstrap.com/img/Photos/Slides/img%20(35).webp" alt="images"></div>
-        <div class="swiper-slide"><img src="https://mdbootstrap.com/img/Photos/Slides/img%20(35).webp" alt="images"></div>
-        <div class="swiper-slide"><img src="https://mdbootstrap.com/img/Photos/Slides/img%20(35).webp" alt="images"></div>
-        <div class="swiper-slide"><img src="https://mdbootstrap.com/img/Photos/Slides/img%20(35).webp" alt="images"></div>
-        <div class="swiper-slide"><img src="https://mdbootstrap.com/img/Photos/Slides/img%20(35).webp" alt="images"></div>
-        <div class="swiper-slide"><img src="https://mdbootstrap.com/img/Photos/Slides/img%20(35).webp" alt="images"></div>
+
+<div class="container mx-auto p-4">
+    <p class="text-center text-3xl mb-8">Pricing - All Inclusive</p>
+    <div class="flex flex-wrap justify-around">
+        <div class="w-full lg:w-5/12 md:w-5/12 lg:w-auto mb-4 md:mb-0">
+            <div class="bg-gray-100 p-4 rounded-lg border">
+                <p class="cursor-pointer bandwsection text-center">Pencil Sketch <i class="ml-5 fas fa-chevron-down"></i></p>
+                <div class="bandwprice  mt-3">
+                    <hr>
+                    <p class="my-3 headtype">Solo portrait</p>
+                    <div class="flex justify-around mb-3">
+                        <div>
+                            <p class="text-center">Size</p>
+                            <p>A2 <span class="sixetext">Large</span></p>
+                            <p>A3 <span class="sixetext">Medium</span></p>
+                            <p>A4 <span class="sixetext">Small</span></p>
+                        </div>
+                        <div>
+                            <p style="color: rgba(243,244,246,var(--tw-bg-opacity));">a</p>
+                            <p class="pricepara">999/-</p>
+                            <p class="pricepara">799/-</p>
+                            <p class="pricepara">599/-</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <p class="my-3 headtype">Couple potrait</p>
+                    <div class="flex justify-around mb-3">
+                        <div>
+                            <p class="text-center">Size</p>
+                            <p>A1 <span class="sixetext">Extra large</span></p>
+                            <p>A2 <span class="sixetext">Large</span></p>
+                            <p>A3 <span class="sixetext">Medium</span></p>
+                        </div>
+                        <div>
+                            <p style="color: rgba(243,244,246,var(--tw-bg-opacity));">a</p>
+                            <p class="pricepara">1999/-</p>
+                            <p class="pricepara">1599/-</p>
+                            <p class="pricepara">1399/-</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full lg:w-5/12 md:w-5/12 lg:w-auto mb-4 md:mb-0">
+            <div class="bg-gray-100 p-4 rounded-lg border">
+                <p class="cursor-pointer colorsection text-center">Colour pencil Sketch <i class="ml-5 fas fa-chevron-down"></i>
+                </p>  
+                <div class="bandwprice  mt-2">
+                    <p>hi</p>
+                    <p>hi</p>
+                    <p>hi</p>
+                    <p>hi</p>
+                    <p>hi</p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-
-<a href="" class="mouse js-anchor-link mt-11"><span>Scroll</span></a>
-<section class="mt-11" style="margin-top: 100px;">
-    <div class="flex justify-center items-center">
-        <p>My Works</p>
-        <p>Oil paste colors</p>
-    </div>
-</section>
-<script>
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      autoplay: {
-        delay: 5000,
-      },
-      loop: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-  </script>
-<script>
-    $(document).ready(function() {
-        $('#mobile-menu-toggle').click(function() {
-            $('#mobile-menu').animate({right: '0'}, 200);
-            $('#mobile-menu-toggle').hide(); // Hide menu button
-            $('#close-btn').show(); // Show close button
-        });
-        $(document).on('click', '#close-btn', function() {
-            $('#mobile-menu').animate({right: '-200px'}, 200);
-            $('#close-btn').hide(); // Hide close button
-            $('#mobile-menu-toggle').show(); // Show menu button
-        });
-    });
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
