@@ -28,9 +28,9 @@ var swiper = new Swiper(".mySwiper", {
     prevEl: ".swiper-button-prev",
   },
 });
-$(".bandwsection, .colorsection").on("click", function () {
+$(".bandwsection, .colorsection, .oilpainsection").on("click", function () {
   var allITags = $(
-    ".bandwsection i.fa-chevron-down, .colorsection i.fa-chevron-down"
+    ".bandwsection i.fa-chevron-down, .colorsection i.fa-chevron-down, .oilpainsection i.fa-chevron-down"
   );
   $(".bandwprice").not($(this).siblings(".bandwprice")).slideUp();
   $(this).siblings(".bandwprice").slideToggle();

@@ -30,16 +30,21 @@
 #mobile-menu {
     position: fixed;
     right: -200px;
-    /* Initially hidden off-screen */
     width: 120px;
     height: calc(100% - 1rem);
-    /* Adjust based on your header's height */
     background-color: white;
-    /* Adjust as needed */
     transition: right 0.5s ease-in-out;
-    /* Smooth transition */
     z-index: 1000;
-    /* Ensure sidebar appears above other content */
+}
+#mobile-menu > .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+}
+#mobile-menu > .container > a > i {
+    font-size: 30px;
 }
 
 .menu-container {
@@ -399,12 +404,16 @@ nav {
     }
 }
 
-.fa-brands {
+.fa-brands,
+.fa-envelope {
     font-size: 20px;
 }
-
+.fa-phone {
+    font-size: 16px;
+}
 .bandwsection,
-.colorsection {
+.colorsection,
+.oilpainsection {
     font-size: 20px;
     cursor: pointer;
 }
@@ -435,4 +444,7 @@ nav {
 .headtype{
     font-size: 20px;
     font-family: 500;
+}
+.forparatag p{
+    height: 25px;
 }
