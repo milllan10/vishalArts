@@ -472,3 +472,6 @@ nav {
         columns: 2; /* Set the number of columns to 2 for mobile devices */
     }
 }
+.imagenewsec{gap: 10px;}
+/* .imagesSnew {width: 250px;} */
+.imagesSnew img {width: 100%; height: auto;}
