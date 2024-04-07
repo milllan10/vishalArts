@@ -5,7 +5,9 @@
     font-weight: 500;
     /* font-style: normal; */
 }
-
+body{
+    background-color: #142d4c;
+}
 /* For WebKit browsers (e.g., Chrome, Safari) */
 ::-webkit-scrollbar {
     width: 4px;
