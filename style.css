@@ -448,3 +448,27 @@ nav {
 .forparatag p{
     height: 25px;
 }
+.allImages{
+    columns: 250px 4;
+}
+.imagesS{
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid; */
+    /* border-radius: 20px; */
+    margin: 20px 5px;
+    padding: 10px;
+    /* width: 250px; */
+}
+.imagesS img{
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+@media screen and (max-width: 768px) {
+    .allImages {
+        columns: 2; /* Set the number of columns to 2 for mobile devices */
+    }
+}
