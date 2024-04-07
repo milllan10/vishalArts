@@ -7,6 +7,10 @@
 }
 body{
     background-color: #142d4c;
+    background-image: url(https://hirebeen.com/image/Element1.svg);
+    background-repeat: repeat;
+    /* background-size: contain; */
+    background-size: 225% auto;
 }
 /* For WebKit browsers (e.g., Chrome, Safari) */
 ::-webkit-scrollbar {
@@ -474,6 +478,6 @@ nav {
         columns: 2; /* Set the number of columns to 2 for mobile devices */
     }
 }
-.imagenewsec{gap: 10px;}
+.imagenewsec{gap: 2px;}
 /* .imagesSnew {width: 250px;} */
-.imagesSnew img {width: 100%; height: auto;}
+.imagesSnew img {width: 100%; height: auto;margin-bottom: 10px;border-radius: 5px;}
