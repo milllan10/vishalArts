@@ -451,13 +451,13 @@ nav {
 .allImages{
     columns: 250px 4;
 }
-.imagesS{
-    display: flex;
+.imagesS {
+    /* display: flex; */
     flex-direction: column;
     /* border: 1px solid; */
     /* border-radius: 20px; */
-    margin: 20px 5px;
-    padding: 10px;
+    margin: 3px 0px;
+    padding: 5px;
     /* width: 250px; */
 }
 .imagesS img{
