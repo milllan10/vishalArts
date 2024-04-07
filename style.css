@@ -477,6 +477,12 @@ nav {
     .allImages {
         columns: 2; /* Set the number of columns to 2 for mobile devices */
     }
+    .imagesforlaptop{
+        display: none;
+    }
+    .imagesformobile{
+        display: flex;
+    }
 }
 .imagenewsec{gap: 2px;}
 /* .imagesSnew {width: 250px;} */
